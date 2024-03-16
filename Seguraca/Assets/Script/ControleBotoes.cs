@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class ControleBotoes : MonoBehaviour
 {
+    private float tempo;
+    private bool isGazing = false;
+    public float TempoOBS;
+    public string nomeDaCena;
+
     // Método chamado quando o botão de mudar de cena é clicado
     public void MudarDeCena(string nomeDaCena)
     {
@@ -21,5 +26,36 @@ public class ControleBotoes : MonoBehaviour
         Application.Quit();
 #endif
     }
+    public void OnPointerEnter()
+    {
+        isGazing = true;
+    }
 
+    public void OnPointerExit()
+    {
+        isGazing = false;
+        tempo = 0.0f;
+    }
+
+    public void OnPointerClick()
+    {
+    }
+    private void Update()
+    {
+        if (isGazing)
+        {
+            tempo += Time.deltaTime;
+
+            if (tempo >= TempoOBS)
+            {
+                isGazing = false;
+                if(nomeDaCena == "Sair")
+                {
+                    FecharPrograma();
+                }
+                else { 
+                MudarDeCena(nomeDaCena);}
+            }
+        }
+    }
 }
