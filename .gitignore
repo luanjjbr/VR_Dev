@@ -6,7 +6,7 @@
 [Tt]emp/
 [Oo]bj/
 [Ll]ogs/
-[Uu]ser[Ss]ettings/
+#[Uu]ser[Ss]ettings/
 
 # Capturas de Memória podem ficar excessivamente grandes.
 # Elas também podem conter dados extremamente sensíveis
@@ -19,7 +19,7 @@
 # /[Aa]ssets/AssetStoreTools*
 
 # Plugin Jetbrains Rider autogerado
-[Aa]ssets/Plugins/Editor/JetBrains*
+#[Aa]ssets/Plugins/Editor/JetBrains*
 
 # Diretório de cache do Visual Studio
 .vs/
@@ -67,10 +67,10 @@ sysinfo.txt
 #[Ll]ogs/ 
 
 # Arquivo gerado pelo Crashlytics
-crashlytics-build.properties
+#crashlytics-build.properties
 
 # Addressables empacotados
-[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+#[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Ativos temporários gerados automaticamente para Android
 #[Aa]ssets/[Ss]treamingAssets/aa.meta
