@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tipo_B.unity
     guid: 2bbd4e56022f4d24cb083f67949ee274
   - enabled: 1
-    path: Assets/Scenes/Tipo_D.unity
+    path: Assets/Scenes/Tipo_C.unity
     guid: 8649a3e3b0575054f9bc9f35cd591cfd
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 81f3142145b7e9e4681791214857eca7,
