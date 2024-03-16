@@ -50,6 +50,7 @@ public class Extintor : MonoBehaviour
             }
         }
     }
+    /*
     void TrocarPosicaoERotacao()
     {
         // Encontrar objetos pela tag
@@ -89,6 +90,32 @@ public class Extintor : MonoBehaviour
         else
         {
             Debug.LogError("Objetos nao encontrados com as tags especificadas.");
+        }
+    }*/
+    void TrocarPosicaoERotacao()
+    {
+        // Encontrar objeto pela tag "mao"
+        GameObject objeto1 = GameObject.FindGameObjectWithTag("mao");
+
+        // Verificar se o objeto foi encontrado
+        if (objeto1 != null)
+        {
+            // Salvar as informações do objeto1 antes da troca
+            Vector3 posicaoObjeto1 = objeto1.transform.position;
+            Quaternion rotacaoObjeto1 = objeto1.transform.rotation;
+            Transform paiObjeto1 = objeto1.transform.parent;
+            string tagObjeto1 = objeto1.tag;
+
+            // Clonar o objeto2 e configurá-lo para ter a mesma posição, rotação, parentesco e tag que o objeto1 tinha
+            GameObject novoObjeto = Instantiate(gameObject, posicaoObjeto1, rotacaoObjeto1, paiObjeto1); // Clonar o objeto2 (este objeto com o script)
+            novoObjeto.tag = tagObjeto1;
+
+            // Deletar o objeto1 original
+            Destroy(objeto1);
+        }
+        else
+        {
+            Debug.LogError("Objeto com a tag 'mao' não encontrado.");
         }
     }
 }

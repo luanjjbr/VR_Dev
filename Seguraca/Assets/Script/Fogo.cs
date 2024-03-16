@@ -10,6 +10,7 @@ public class Fogo : MonoBehaviour
     public float TempoOBS;
     public GameObject id;
     public GameObject id2;
+    public string nome = "agua(Clone)";
 
     //public Renderer objectRenderer;
 
@@ -112,9 +113,11 @@ public class Fogo : MonoBehaviour
     }
     bool Verificar()
     {
-        // Encontrar objetos pela tag
+        // Encontrar objeto pela tag
         GameObject objeto1 = GameObject.FindGameObjectWithTag("mao");
-        if (objeto1 == id)
+
+        // Verificar se o objeto foi encontrado e se o nome é "agua(Clone)"
+        if (objeto1 != null && objeto1.name == nome)
         {
             return true;
         }

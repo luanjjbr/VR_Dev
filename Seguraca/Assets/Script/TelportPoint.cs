@@ -7,10 +7,11 @@ using UnityEngine.Events;
 
 public class TelportPoint : MonoBehaviour
 {
+    public GameObject objetoParaTrocar;
+
     public UnityEvent onteleportenter;
     public UnityEvent onteleport;
     public UnityEvent onteleportexit;
-    public GameObject[] ponto;
 
 
     public float TempoOBS;
@@ -19,8 +20,6 @@ public class TelportPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.GetChild(0).gameObject.SetActive(false);
-        ponto = GameObject.FindGameObjectsWithTag("ponto");
     }
     public void OnPointerEnter()
     {
@@ -44,40 +43,7 @@ public class TelportPoint : MonoBehaviour
 
             if (tempo >= TempoOBS)
             {
-                foreach (GameObject objeto in ponto)
-                {
-                    //objeto.SetActive(true);
-                    MeshRenderer meshRenderer1 = objeto.GetComponent<MeshRenderer>();
-                    if (meshRenderer1 != null)
-                        meshRenderer1.enabled = true;
-
-                    BoxCollider boxCollider1 = objeto.GetComponent<BoxCollider>();
-                    if (boxCollider1 != null)
-                        boxCollider1.enabled = true;
-                }
-                isGazing = false;
-                Execute();
-                onteleport?.Invoke();
-                
-                if (TelportManager.instace != null)
-                {
-                    TelportManager.instace.DisableTeleportPoint(gameObject);
-                }
-                // Desativa o Mesh Renderer
-                MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
-                if (meshRenderer != null)
-                {
-                    meshRenderer.enabled = false;
-                }
-
-                // Desativa o Box Collider
-                BoxCollider boxCollider = gameObject.GetComponent<BoxCollider>();
-                if (boxCollider != null)
-                {
-                    boxCollider.enabled = false;
-                }
-
-                tempo = 0.0f;
+                TrocarPosicoes();
             }
         }
     }
@@ -85,14 +51,28 @@ public class TelportPoint : MonoBehaviour
     {
         // Implemente o que deseja fazer quando o objeto é clicado.
     }
-
-    private void Execute()
+    void TrocarPosicoes()
     {
-        GameObject player = TelportManager.instace.Player;
-        player.transform.position = transform.position;
-        Camera camera = player.GetComponentInChildren<Camera>();
-        float roty = transform.rotation.eulerAngles.y - camera.transform.localEulerAngles.y;
-        player.transform.rotation = Quaternion.Euler(0, roty, 0);
+        // Verifica se o objeto para trocar foi atribuído
+        if (objetoParaTrocar != null)
+        {
+            // Obtém as posições atuais dos dois objetos
+            Vector3 posicaoAtualObjetoScript = transform.position;
+            Vector3 posicaoAtualObjetoParaTrocar = objetoParaTrocar.transform.position;
+
+            // Mantém a coordenada Y de cada objeto inalterada
+            float yObjetoScript = posicaoAtualObjetoScript.y;
+            float yObjetoParaTrocar = posicaoAtualObjetoParaTrocar.y;
+
+            // Troca apenas as posições X e Z entre os dois objetos
+            transform.position = new Vector3(posicaoAtualObjetoParaTrocar.x, yObjetoScript, posicaoAtualObjetoParaTrocar.z);
+            objetoParaTrocar.transform.position = new Vector3(posicaoAtualObjetoScript.x, yObjetoParaTrocar, posicaoAtualObjetoScript.z);
+        }
+        else
+        {
+            Debug.LogWarning("Objeto para trocar não foi atribuído.");
+        }
     }
+
 }
 

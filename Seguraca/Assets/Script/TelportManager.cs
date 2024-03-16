@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TelportManager : MonoBehaviour
-{
+{//nova
     public static TelportManager instace;
     public GameObject Player;
     private GameObject lasTeleportepoint;
