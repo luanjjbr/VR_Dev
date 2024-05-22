@@ -9,7 +9,7 @@ public class ControleBotoes : MonoBehaviour
     public string nomeDaCena;
 
     // Método chamado quando o botão de mudar de cena é clicado
-    public void MudarDeCena(string nomeDaCena)
+    public static void MudarDeCena(string nomeDaCena)
     {
 
         SceneManager.LoadScene(nomeDaCena);
@@ -49,12 +49,23 @@ public class ControleBotoes : MonoBehaviour
             if (tempo >= TempoOBS)
             {
                 isGazing = false;
-                if(nomeDaCena == "Sair")
+                if (nomeDaCena == "Sair")
                 {
                     FecharPrograma();
                 }
-                else { 
-                MudarDeCena(nomeDaCena);}
+                else if (nomeDaCena == "Reinicia")
+                {
+
+                    // Reinicia a cena atual (pode ser necessário ajustar se você tiver várias cenas)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+                else if (nomeDaCena == ".")
+                {
+                }
+                else
+                {
+                    MudarDeCena(nomeDaCena);
+                }
             }
         }
     }

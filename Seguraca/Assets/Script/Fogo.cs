@@ -57,6 +57,7 @@ public class Fogo : MonoBehaviour
                 DesativarParticula(fogo);
                 DesativarCollider();
                 Invoke("DesativarObjeto", 1);
+                Apresentacao1.num = 1;
             }
         }
     }

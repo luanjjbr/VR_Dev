@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 8567712006236188703}
   - component: {fileID: 4889290093209812541}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: placaAgua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f9dd1447fcc3d44d950e933b172c49d, type: 2}
+  - {fileID: 2100000, guid: 52554b3cfd9ba554fb28fd9b064c4fd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3380620731386398554}
   - component: {fileID: 8111721048202462467}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: placaGas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f9dd1447fcc3d44d950e933b172c49d, type: 2}
+  - {fileID: 2100000, guid: bf8a065d824f35045aa56e93250c798a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 8289744410694449755}
   - component: {fileID: 6156590376944272835}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Placapo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f9dd1447fcc3d44d950e933b172c49d, type: 2}
+  - {fileID: 2100000, guid: 991ec8ef7b6e830409fe1b8b3987e031, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
